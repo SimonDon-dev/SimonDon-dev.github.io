@@ -1,0 +1,44 @@
+<section class="archive-page">
+  <div class="archive-inner">
+    <h1 class="page-title"><% if (is_tag()) { %># <%= page.tag %><% } else { %>Archive<% } %></h1>
+    
+    <div class="timeline">
+      <% var last_year; %>
+      <% page.posts.sort('date', -1).each(function(post){ %>
+        <% var year = date(post.date, 'YYYY'); %>
+        <% if (year !== last_year) { %>
+          <% if (last_year) { %></div><% } %>
+          <h2 class="timeline-year"><%= year %></h2>
+          <div class="timeline-group">
+        <% } %>
+        <% last_year = year; %>
+        <article class="timeline-item">
+          <time class="timeline-date"><%= date(post.date, 'MMM DD') %></time>
+          <div class="timeline-content">
+            <a href="<%- url_for(post.path) %>" class="timeline-title"><%= post.title %></a>
+            <% if (post.tags && post.tags.length) { %>
+            <div class="timeline-tags">
+              <% post.tags.each(function(tag){ %>
+                <a href="<%- url_for(tag.path) %>" class="tag-small"><%= tag.name %></a>
+              <% }) %>
+            </div>
+            <% } %>
+          </div>
+        </article>
+      <% }) %>
+      <% if (last_year) { %></div><% } %>
+    </div>
+  </div>
+</section>
+
+<% if (page.total > 1) { %>
+<nav class="pagination">
+  <% if (page.prev) { %>
+    <a href="<%- url_for(page.prev_link) %>" class="page-link prev">← Newer</a>
+  <% } %>
+  <span class="page-number">Page <%= page.current %> of <%= page.total %></span>
+  <% if (page.next) { %>
+    <a href="<%- url_for(page.next_link) %>" class="page-link next">Older →</a>
+  <% } %>
+</nav>
+<% } %>

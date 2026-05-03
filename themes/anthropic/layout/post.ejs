@@ -1,0 +1,41 @@
+<article class="post-detail">
+  <header class="post-header">
+    <div class="post-header-inner">
+      <div class="post-meta">
+        <time datetime="<%= date(page.date, 'YYYY-MM-DD') %>"><%= date(page.date, 'MMM DD, YYYY') %></time>
+        <% if (page.updated && page.updated !== page.date) { %>
+          <span class="post-updated">Updated: <%= date(page.updated, 'MMM DD, YYYY') %></span>
+        <% } %>
+      </div>
+      <h1 class="post-detail-title"><%= page.title %></h1>
+      <% if (page.tags && page.tags.length) { %>
+      <div class="post-detail-tags">
+        <% page.tags.each(function(tag){ %>
+          <a href="<%- url_for(tag.path) %>" class="tag-pill"><%= tag.name %></a>
+        <% }) %>
+      </div>
+      <% } %>
+    </div>
+  </header>
+  <div class="post-body">
+    <div class="post-body-inner">
+      <%- page.content %>
+    </div>
+  </div>
+  <footer class="post-footer">
+    <div class="post-nav">
+      <% if (page.prev) { %>
+      <a href="<%- url_for(page.prev.path) %>" class="post-nav-link prev">
+        <span class="nav-label">← Previous</span>
+        <span class="nav-title"><%= page.prev.title %></span>
+      </a>
+      <% } %>
+      <% if (page.next) { %>
+      <a href="<%- url_for(page.next.path) %>" class="post-nav-link next">
+        <span class="nav-label">Next →</span>
+        <span class="nav-title"><%= page.next.title %></span>
+      </a>
+      <% } %>
+    </div>
+  </footer>
+</article>

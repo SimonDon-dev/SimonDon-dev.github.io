@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a href="<%- url_for('/') %>" class="site-logo">
+      <span class="logo-text"><%= config.title %></span>
+    </a>
+    <nav class="site-nav">
+      <a href="<%- url_for('/') %>" class="nav-link<%= is_home() ? ' active' : '' %>">Home</a>
+      <a href="<%- url_for('/archives') %>" class="nav-link<%= is_archive() ? ' active' : '' %>">Archive</a>
+      <a href="<%- url_for('/tags') %>" class="nav-link">Tags</a>
+    </nav>
+    <button class="mobile-menu-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

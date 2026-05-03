@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
+title: Simon's Tech Blog
+subtitle: 'Engineering & Algorithm Notes'
+description: 'Exploring software engineering, algorithms, and technical design.'
+keywords: 'tech, algorithm, blog, engineering'
+author: Simon
 language: en
 timezone: ''
 
@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: anthropic
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
