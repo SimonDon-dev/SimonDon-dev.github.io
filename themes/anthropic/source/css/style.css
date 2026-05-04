@@ -960,6 +960,71 @@ figure.highlight .code {
   }
 }
 
+/* --- Comments Section --- */
+.comments-section {
+  padding: 0 2rem 4rem;
+}
+
+.comments-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.comments-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.comments-title svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.comments-hint {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
+}
+
+.comments-hint a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.comments-hint a:hover {
+  color: var(--accent);
+}
+
+.giscus-wrapper {
+  min-height: 120px;
+  border-radius: var(--radius-md);
+}
+
+/* Override giscus iframe background to match theme */
+.giscus,
+.giscus-frame {
+  width: 100%;
+  color-scheme: light;
+}
+
+@media (max-width: 768px) {
+  .comments-section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
 /* --- Animations --- */
 @keyframes fadeInUp {
   from {

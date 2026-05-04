@@ -38,4 +38,32 @@
       <% } %>
     </div>
   </footer>
+
+  <!-- Comments Section -->
+  <section class="comments-section">
+    <div class="comments-inner">
+      <h2 class="comments-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        Comments
+      </h2>
+      <p class="comments-hint">Sign in with GitHub to leave a comment. Comments are powered by <a href="https://giscus.app" target="_blank" rel="noopener">Giscus</a> via GitHub Discussions.</p>
+      <div class="giscus-wrapper">
+        <script src="https://giscus.app/client.js"
+          data-repo="<%= theme.giscus.repo %>"
+          data-repo-id="<%= theme.giscus.repo_id %>"
+          data-category="<%= theme.giscus.category %>"
+          data-category-id="<%= theme.giscus.category_id %>"
+          data-mapping="<%= theme.giscus.mapping %>"
+          data-strict="<%= theme.giscus.strict %>"
+          data-reactions-enabled="<%= theme.giscus.reactions_enabled %>"
+          data-emit-metadata="<%= theme.giscus.emit_metadata %>"
+          data-input-position="<%= theme.giscus.input_position %>"
+          data-theme="<%= theme.giscus.theme %>"
+          data-lang="<%= theme.giscus.lang %>"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+    </div>
+  </section>
 </article>

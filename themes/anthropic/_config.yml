@@ -1,0 +1,19 @@
+# Giscus Comment Configuration
+# See: https://giscus.app/
+# Steps to get category_id:
+#   1. Install Giscus App: https://github.com/apps/giscus (authorize for this repo)
+#   2. Visit https://giscus.app/, enter "SimonDon-dev/SimonDon-dev.github.io", select "General" category
+#   3. Copy the data-category-id value (starts with "DIC_") and paste it below
+
+giscus:
+  repo: SimonDon-dev/SimonDon-dev.github.io
+  repo_id: R_kgDOSTL0zA
+  category: General
+  category_id: "49365749"
+  mapping: pathname
+  strict: "0"
+  reactions_enabled: "1"
+  emit_metadata: "0"
+  input_position: top
+  theme: light
+  lang: en
